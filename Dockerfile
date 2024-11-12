@@ -9,7 +9,7 @@ COPY *.csproj .
 RUN dotnet restore -r linux-musl-arm64
 
 COPY . .
-RUN dotnet publish -c release -o /app -r linux-musl-arm64 --no-restore LanPlayServer.csproj
+RUN dotnet publish -c release -o /app -r linux-musl-amd64 --no-restore LanPlayServer.csproj
 
 FROM alpine:latest
 WORKDIR /app
