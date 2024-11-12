@@ -6,7 +6,7 @@ WORKDIR /source
 RUN apk add --no-cache clang gcc musl-dev zlib-dev
 
 COPY *.csproj .
-RUN dotnet restore -r linux-musl-arm64
+RUN dotnet restore -r linux-musl-amd64
 
 COPY . .
 RUN dotnet publish -c release -o /app -r linux-musl-amd64 --no-restore LanPlayServer.csproj
